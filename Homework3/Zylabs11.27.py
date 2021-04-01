@@ -7,22 +7,22 @@ count = 1
 
 for i in range(1, 6):
 
-    jersey_number = int(input('Enter player {}\'s jersey number:\n' .format(i)))
+    jersey_num = int(input('Enter player {}\'s jersey number:\n' .format(i)))
     rating = int(input('Enter player {}\'s rating:\n' .format(i)))
     print()
 
-    if 0 > jersey_number > 99 or 0 > rating > 9:
+    if 0 > jersey_num > 99 or 0 > rating > 9:
         print('invalid entry')
         break
 
     else:
-        team_dict[jersey_number] = rating
+        team_dict[jersey_num] = rating
 
 print("ROSTER")
 
-for jersey_number, rating in sorted(team_dict.items()):
+for jersey_num, rating in sorted(team_dict.items()):
 
-    print("Jersey number: %d, Rating: %d" % (jersey_number, rating))
+    print("Jersey number: %d, Rating: %d" % (jersey_num, rating))
 
 option = ''
 
@@ -39,35 +39,35 @@ while option.upper() != 'Q':
     option = input('Choose an option:\n')
 
     if option == 'a':
-        jersey_number = int(input('Enter a new player\'s jersey number:\n' .format(i)))
+        jersey_num = int(input('Enter a new player\'s jersey number:\n' .format(i)))
         rating = int(input('Enter the players\'s rating:\n'.format(i)))
-        team_dict[jersey_number] = rating
+        team_dict[jersey_num] = rating
 
     elif option == 'd':
-        jersey_number = int(input('Enter a jersey number:\n'))
+        jersey_num = int(input('Enter a jersey number:\n'))
 
-        if jersey_number in team_dict.keys():
-            del team_dict[jersey_number]
+        if jersey_num in team_dict.keys():
+            del team_dict[jersey_num]
 
     elif option == 'u':
-        jersey_number = int(input('Enter a jersey number:\n'))
+        jersey_num = int(input('Enter a jersey number:\n'))
 
-        if jersey_number in team_dict.keys():
+        if jersey_num in team_dict.keys():
             rating = int(input('Enter a new rating for player:\n'))
-            team_dict[jersey_number] = rating
+            team_dict[jersey_num] = rating
 
     elif option == 'r':
         rating_input = int(input('Enter a rating:\n'))
         print('ABOVE {}'.format(rating_input))
 
-        for jersey_number, rating in sorted(team_dict.items()):
+        for jersey_num, rating in sorted(team_dict.items()):
 
             if rating > rating_input:
-                print("Jersey number: %d, Rating: %d" % (jersey_number, rating))
+                print("Jersey number: %d, Rating: %d" % (jersey_num, rating))
 
     elif option == 'o':
         print("ROSTER")
 
-        for jersey_number, rating in sorted(team_dict.items()):
+        for jersey_num, rating in sorted(team_dict.items()):
 
-            print("Jersey number: %d, Rating: %d" % (jersey_number, rating))
+            print("Jersey number: %d, Rating: %d" % (jersey_num, rating))
